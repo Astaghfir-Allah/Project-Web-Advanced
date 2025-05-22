@@ -290,3 +290,64 @@ select:focus {
   color: white;
   border-color: #555;
 }
+
+#filter-popup {
+  display: none;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#filter-popup select,
+#filter-popup label {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+#sortering {
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+#filter-knop {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #f5a623;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#filter-knop:hover {
+  background-color: #d48806;
+}
+
+#pas-filter-toe {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#pas-filter-toe:hover {
+  background-color: #218838;
+}
