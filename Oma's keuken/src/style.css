@@ -1,0 +1,33 @@
+body {
+  padding: 20px;
+  background-color: white;
+  color: black;
+  transition: background 0.3s, color 0.3s;
+}
+
+header{
+    display: flex;
+    background-color: rgb(227, 183, 156);
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+#maaltijd-container, #dagelijks-maal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
