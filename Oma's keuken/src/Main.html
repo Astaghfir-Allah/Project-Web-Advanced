@@ -13,7 +13,9 @@
       <h1 id="titel">Oma's keuken</h1>
     </div>
     <div class="controls">
-      <button onclick="toggleDarkMode()" class="mode-toggle">Donker/Licht</button>
+      <button id="mode-toggle" onclick="toggleDarkMode()">
+        <img id="mode-icon" src="moon.svg" alt="Toggle theme" />
+      </button>
       <select id="taal" onchange="changeLanguage()">
         <option value="nl">NL</option>
         <option value="en">EN</option>
