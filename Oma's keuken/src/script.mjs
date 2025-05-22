@@ -38,11 +38,12 @@ function toonMaaltijd(maaltijden, containerId) {
     const kaart = document.createElement("div");
     kaart.classList.add("maal");
     kaart.innerHTML = `
-      <h3>${maal.strMeal}</h3>
-      <img src="${maal.strMealThumb}" alt="${maal.strMeal}" width="200">
-      <p><strong>Categorie:</strong> ${maal.strCategory}</p>
-      <p><strong>Regio:</strong> ${maal.strArea}</p>
-      <button onclick="showDetails(${maal.idMeal})">Details</button>
+      <a href="${maal.strSource || '#'}" target="_blank" class="kaart-link">
+        <h3>${maal.strMeal}</h3>
+        <img src="${maal.strMealThumb}" alt="${maal.strMeal}" width="200">
+        <p><strong>Categorie:</strong> ${maal.strCategory}</p>
+        <p><strong>Regio:</strong> ${maal.strArea}</p>
+      </a>
     `;
     container.appendChild(kaart);
   });
