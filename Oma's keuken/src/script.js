@@ -57,7 +57,6 @@ function changeLanguage() {
     document.querySelector("label[for='moeilijkheid-filter']").textContent = "Difficulty";
   }
 
-  // Vertaal 'All/Alle' in alle filters
   const allOptions = {
     nl: "Alle",
     en: "All"
@@ -70,36 +69,30 @@ function changeLanguage() {
     }
   });
 
-  // Vertaal Moeilijkheid opties
   const moeilijkheidOpties = {
     nl: ["Makkelijk", "Gemiddeld", "Moeilijk"],
     en: ["Easy", "Medium", "Hard"]
   };
   const moeilijkheidSelect = document.getElementById("moeilijkheid-filter");
   if (moeilijkheidSelect) {
-    // Bewaar huidige selectie
     const huidigeWaarde = moeilijkheidSelect.value;
     moeilijkheidSelect.innerHTML = "";
-    // Voeg all optie toe
     const optAll = document.createElement("option");
     optAll.value = "all";
     optAll.textContent = allOptions[taal];
     moeilijkheidSelect.appendChild(optAll);
-    // Voeg vertaalde opties toe
     moeilijkheidOpties[taal].forEach(opt => {
       const option = document.createElement("option");
       option.value = opt;
       option.textContent = opt;
       moeilijkheidSelect.appendChild(option);
     });
-    // Zet selectie terug als die nog bestaat
     moeilijkheidSelect.value = huidigeWaarde || "all";
   }
 
-  // Vertaal Budget opties
   const budgetOpties = {
     nl: ["€", "€€", "€€€"],
-    en: ["€", "€€", "€€€"] // Zelfde symbolen, anders hier aanpassen indien gewenst
+    en: ["€", "€€", "€€€"]
   };
   const budgetSelect = document.getElementById("budget-filter");
   if (budgetSelect) {
@@ -261,7 +254,7 @@ function pasFilterToe() {
   }
 
   const geselecteerdBudget = document.getElementById("budget-filter").value;
-  if (geselecteerdBudget !== "all") {  // <-- HIER DE FIX: consistente variabele
+  if (geselecteerdBudget !== "all") {
     maaltijden = maaltijden.filter(m => m.budget === geselecteerdBudget);
   }
 
