@@ -1,86 +1,172 @@
 body {
-  padding: 20px;
-  background-color: white;
-  color: black;
-  transition: background 0.3s, color 0.3s;
   margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fdfaf6;
+  color: #3b2e2a;
 }
 
 header {
   display: flex;
-  background-color: rgb(227, 183, 156);
-  padding: 20px;
-  justify-content: space-between;
   align-items: center;
-  position: fixed;
+  background-color: #e8d5c4;
+  padding: 24px 32px;
+  justify-content: space-between;
   width: 100%;
+  box-sizing: border-box;
+  position: fixed;
   top: 0;
   left: 0;
-  box-sizing: border-box;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: 100px;
+}
+
+#granny {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 16px;
 }
 
 #titel {
-  margin-left: 20px;
-  flex: 1;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .controls {
   display: flex;
+  align-items: center;
   gap: 10px;
-  margin-bottom: 0;
   flex-wrap: nowrap;
-  flex: 2;
-  justify-content: center;
 }
 
 #zoek {
-  padding: 8px;
+  padding: 8px 12px;
   font-size: 1rem;
-  width: 60%;
-  border: 1px solid #ccc;
+  width: 250px;
+  border: 1px solid #c1a78f;
   border-radius: 4px 0 0 4px;
+  background-color: #fff8f3;
   outline: none;
 }
 
-#zoek:focus {
-  border-color: #999;
-}
-
-#zoek + button {
+#zoek-knop {
   padding: 8px 16px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #c1a78f;
   border-left: none;
   border-radius: 0 4px 4px 0;
-  background-color: #f2f2f2;
+  background-color: #d9bfa3;
+  color: #3b2e2a;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-#zoek + button:hover {
-  background-color: #ddd;
+#zoek-knop:hover {
+  background-color: #c6a98a;
 }
 
-#taal, button:last-child {
-  flex: 1;
-  max-width: 100px;
+#taal, .mode-toggle {
   padding: 8px;
   font-size: 1rem;
+  border: 1px solid #c1a78f;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  background-color: #fff8f3;
   cursor: pointer;
-  background-color: #f2f2f2;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-#taal:hover, button:last-child:hover {
-  background-color: #ddd;
+#taal:hover, .mode-toggle:hover {
+  background-color: #e4cdbb;
 }
 
 #maaltijd-container, #dagelijks-maal {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 100px;
+  gap: 24px;
+  padding: 40px 32px;
+  margin-top: 180px;
+}
+
+section h2 {
+  margin-left: 32px;
+  color: #5c4435;
+}
+
+.dark-mode {
+  background-color: #2a211c;
+  color: #f0e9e2;
+}
+
+.dark-mode header {
+  background-color: #3b2e2a;
+}
+
+.dark-mode #zoek,
+.dark-mode #zoek-knop,
+.dark-mode #taal,
+.dark-mode .mode-toggle {
+  background-color: #4a3a33;
+  color: #f0e9e2;
+  border-color: #6a5448;
+}
+
+.dark-mode section h2 {
+  color: #e9d7c2;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.zoeksectie {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 140px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  .zoeksectie {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #zoek {
+    width: 80%;
+    border-radius: 4px;
+  }
+
+  #zoek-knop {
+    width: 50%;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+}
+
+#mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+#mode-icon {
+  width: 28px;
+  height: 28px;
+  filter: invert(0%);
+  transition: filter 0.3s;
+}
+
+.dark-mode #mode-icon {
+  filter: invert(100%);
 }
