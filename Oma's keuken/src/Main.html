@@ -28,27 +28,66 @@
     <button id="zoek-knop">Zoeken</button>
   </div>
   
-  <div class="filter-sort-container">
-  <div class="filter-box">
-    <label for="categorie-filter">Filter op categorie:</label>
-    <select id="categorie-filter">
-      <option value="all">Alle categorieën</option>
-    </select>
+  <div id="filters-container">
+    <div class="filter-blok">
+      <label id="label-categorie" for="categorie-filter">Categorie</label>
+      <select id="categorie-filter">
+        <option value="all">Alle</option>
+      </select>
+    </div>
+    <div class="filter-blok">
+      <label id="label-regio" for="regio-filter">Regio</label>
+      <select id="regio-filter">
+        <option value="all">Alle</option>
+      </select>
+    </div>
+    <div class="filter-blok">
+      <label id="label-rating" for="rating-filter">Rating</label>
+      <select id="rating-filter">
+        <option value="all">Alle</option>
+        <option value="5">5 ★</option>
+        <option value="4">4+ ★</option>
+        <option value="3">3+ ★</option>
+      </select>
+    </div>
+    <div class="filter-blok">
+      <label id="label-kookduur" for="kookduur-filter">Kookduur</label>
+      <select id="kookduur-filter">
+        <option value="all">Alle</option>
+        <option value="30">≤ 30 min</option>
+        <option value="60">≤ 60 min</option>
+      </select>
+    </div>
+    <div class="filter-blok">
+      <label id="label-budget" for="budget-filter">Budget</label>
+      <select id="budget-filter">
+        <option value="all">Alle</option>
+        <option value="€">€</option>
+        <option value="€€">€€</option>
+        <option value="€€€">€€€</option>
+      </select>
+    </div>
+    <div class="filter-blok">
+      <label id="label-moeilijkheid" for="moeilijkheid-filter">Moeilijkheid</label>
+      <select id="moeilijkheid-filter">
+        <option value="all">Alle</option>
+        <option value="Makkelijk">Makkelijk</option>
+        <option value="Gemiddeld">Gemiddeld</option>
+        <option value="Moeilijk">Moeilijk</option>
+      </select>
+    </div>
   </div>
 
-  <div class="sort-box">
-    <label for="sortering">Sorteer op:</label>
+  <div id="sortering-container">
+    <label id="label-sortering" for="sortering">Sorteren op</label>
     <select id="sortering">
-      <option value="default">Sorteer op</option>
       <option value="naam-asc">Naam A-Z</option>
       <option value="naam-desc">Naam Z-A</option>
-      <option value="tijd-oplopend">Kookduur (kort → lang)</option>
-      <option value="tijd-aflopend">Kookduur (lang → kort)</option>
-      <option value="rating">Rating (hoog → laag)</option>
+      <option value="tijd-oplopend">Tijd Oplopend</option>
+      <option value="tijd-aflopend">Tijd Aflopend</option>
+      <option value="rating">Hoogste Rating</option>
     </select>
   </div>
-</div>
-
 
   <section id="dagelijkse-aanbeveling">
     <h2 id="dagelijkse-titel">Maaltijd van de dag</h2>
