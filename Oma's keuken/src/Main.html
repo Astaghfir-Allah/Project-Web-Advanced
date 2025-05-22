@@ -8,17 +8,23 @@
 </head>
 <body>
   <header>
-    <h1 id="titel">Oma's keuken</h1>
+    <div class="logo-container">
+      <img id="granny" src="openart-image_WN3MACL9_1747918512741_raw.jpg" alt="Oma">
+      <h1 id="titel">Oma's keuken</h1>
+    </div>
     <div class="controls">
-      <input type="text" id="zoek" placeholder="Zoek een maaltijd...">
-      <button id="zoek-knop">Zoeken</button>
-      <button>☀️/🌙</button>
-      <select id="taal">
+      <button onclick="toggleDarkMode()" class="mode-toggle">Donker/Licht</button>
+      <select id="taal" onchange="changeLanguage()">
         <option value="nl">NL</option>
         <option value="en">EN</option>
       </select>
     </div>
   </header>
+
+  <div class="zoeksectie">
+    <input type="text" id="zoek" placeholder="Zoek een maaltijd...">
+    <button id="zoek-knop">Zoeken</button>
+  </div>
 
   <section id="dagelijkse-aanbeveling">
     <h2 id="dagelijkse-titel">Maaltijd van de dag</h2>
@@ -30,6 +36,6 @@
     <div id="maaltijd-container"></div>
   </section>
 
-  <script src="script.js"></script>
+  <script src="script.mjs"></script>
 </body>
 </html>
