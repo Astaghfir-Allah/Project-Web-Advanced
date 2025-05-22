@@ -250,3 +250,43 @@ section h2 {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
+
+#filters-container, #sortering-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-blok {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  min-width: 140px;
+  transition: border 0.3s;
+}
+
+select:focus {
+  border-color: #0077ff;
+  outline: none;
+}
+
+.dark-mode select {
+  background-color: #333;
+  color: white;
+  border-color: #555;
+}
