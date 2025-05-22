@@ -299,6 +299,9 @@ select:focus {
   background-color: #fefefe;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 #filter-popup select,
@@ -321,11 +324,11 @@ select:focus {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
-  background-color: #f5a623;
+  background-color: #e4a672;
   color: white;
   font-weight: bold;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -350,4 +353,11 @@ select:focus {
 
 #pas-filter-toe:hover {
   background-color: #218838;
+}
+
+#filter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
