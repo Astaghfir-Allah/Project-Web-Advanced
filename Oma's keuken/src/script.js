@@ -10,6 +10,7 @@ function toggleDarkMode() {
 
 function changeLanguage() {
   const taal = document.getElementById("taal").value;
+
   if (taal === "nl") {
     document.getElementById("titel").textContent = "Oma's keuken";
     document.getElementById("dagelijkse-titel").textContent = "Maaltijd van de Dag";
@@ -27,10 +28,38 @@ function changeLanguage() {
     document.querySelector("#categorie-filter option[value='all']").textContent = "All categories";
     document.querySelector("#sortering option[value='default']").textContent = "Sort by";
   }
+
   document.querySelector("label[for='categorie-filter']").textContent =
-  taal === "nl" ? "Filter op categorie:" : "Filter by category:";
+    taal === "nl" ? "Filter op categorie:" : "Filter by category:";
   document.querySelector("label[for='sortering']").textContent =
-  taal === "nl" ? "Sorteer op:" : "Sort by:";
+    taal === "nl" ? "Sorteer op:" : "Sort by:";
+  document.querySelector("label[for='regio-filter']").textContent =
+    taal === "nl" ? "Regio" : "Region";
+  document.querySelector("label[for='rating-filter']").textContent =
+    taal === "nl" ? "Rating" : "Rating";
+  document.querySelector("label[for='kookduur-filter']").textContent =
+    taal === "nl" ? "Kookduur" : "Cooking Time";
+  document.querySelector("label[for='budget-filter']").textContent =
+    taal === "nl" ? "Budget" : "Budget";
+  document.querySelector("label[for='moeilijkheid-filter']").textContent =
+    taal === "nl" ? "Moeilijkheid" : "Difficulty";
+
+  const sortOpties = document.getElementById("sortering").options;
+  if (taal === "nl") {
+    sortOpties[0].text = "Sorteer op";
+    sortOpties[1].text = "Naam A-Z";
+    sortOpties[2].text = "Naam Z-A";
+    sortOpties[3].text = "Tijd Oplopend";
+    sortOpties[4].text = "Tijd Aflopend";
+    sortOpties[5].text = "Hoogste Rating";
+  } else {
+    sortOpties[0].text = "Sort by";
+    sortOpties[1].text = "Name A-Z";
+    sortOpties[2].text = "Name Z-A";
+    sortOpties[3].text = "Time Ascending";
+    sortOpties[4].text = "Time Descending";
+    sortOpties[5].text = "Top Rated";
+  }
 }
 
 function toonMaaltijd(maaltijden, containerId, zoekResultaat = false) {
@@ -136,6 +165,31 @@ function pasFilterToe() {
     maaltijden = maaltijden.filter(m => m.strCategory === geselecteerdeCategorie);
   }
 
+  const geselecteerdeRegio = document.getElementById("regio-filter")?.value;
+  if (geselecteerdeRegio && geselecteerdeRegio !== "all") {
+    maaltijden = maaltijden.filter(m => m.strArea === geselecteerdeRegio);
+  }
+
+  const geselecteerdeRating = document.getElementById("rating-filter")?.value;
+  if (geselecteerdeRating && geselecteerdeRating !== "all") {
+    maaltijden = maaltijden.filter(m => parseFloat(m.rating) >= parseFloat(geselecteerdeRating));
+  }
+
+  const geselecteerdeTijd = document.getElementById("kookduur-filter")?.value;
+  if (geselecteerdeTijd && geselecteerdeTijd !== "all") {
+    maaltijden = maaltijden.filter(m => parseInt(m.kookduur) <= parseInt(geselecteerdeTijd));
+  }
+
+  const geselecteerdBudget = document.getElementById("budget-filter")?.value;
+  if (geselecteerdBudget && geselecteerdBudget !== "all") {
+    maaltijden = maaltijden.filter(m => m.budget === geselecteerdBudget);
+  }
+
+  const geselecteerdeMoeilijkheid = document.getElementById("moeilijkheid-filter")?.value;
+  if (geselecteerdeMoeilijkheid && geselecteerdeMoeilijkheid !== "all") {
+    maaltijden = maaltijden.filter(m => m.moeilijkheid === geselecteerdeMoeilijkheid);
+  }
+
   const sortering = document.getElementById("sortering").value;
   switch (sortering) {
     case "naam-asc":
@@ -157,6 +211,7 @@ function pasFilterToe() {
 
   toonMaaltijd(maaltijden, "maaltijd-container");
 }
+
 
 async function laadCategorieën() {
   const res = await fetch(`${API_BASE}list.php?c=list`);
