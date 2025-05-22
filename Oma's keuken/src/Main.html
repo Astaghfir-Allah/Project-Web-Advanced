@@ -27,53 +27,55 @@
     <input type="text" id="zoek" placeholder="Zoek een maaltijd...">
     <button id="zoek-knop">Zoeken</button>
   </div>
-  
-  <button id="filter-knop">Filter</button>
-  <div id="filter-popup" style="display:none; position:absolute; background:#fff; border:1px solid #ccc; padding:10px;">
-    <label for="categorie-filter">Filter op categorie:</label>
-    <select id="categorie-filter">
-      <option value="all">Alle</option>
-    </select>
 
-    <label for="regio-filter">Regio</label>
-    <select id="regio-filter">
-      <option value="all">Alle</option>
-      <option value="Italian">Italian</option>
-      <option value="French">French</option>
-    </select>
+  <div id="filter-container">
+    <button id="filter-knop" onclick="toggleFilterPopup()">Filter</button>
+    <div id="filter-popup">
+      <label for="categorie-filter">Filter op categorie:</label>
+      <select id="categorie-filter">
+        <option value="all">Alle</option>
+      </select>
 
-    <label for="rating-filter">Rating</label>
-    <select id="rating-filter">
-      <option value="all">Alle</option>
-      <option value="3.5">3.5 ★ en hoger</option>
-      <option value="4">4 ★ en hoger</option>
-      <option value="4.5">4.5 ★ en hoger</option>
-    </select>
+      <label for="regio-filter">Regio</label>
+      <select id="regio-filter">
+        <option value="all">Alle</option>
+        <option value="Italian">Italian</option>
+        <option value="French">French</option>
+      </select>
 
-    <label for="kookduur-filter">Kookduur</label>
-    <select id="kookduur-filter">
-      <option value="all">Alle</option>
-      <option value="30">Max 30 min</option>
-      <option value="45">Max 45 min</option>
-      <option value="60">Max 60 min</option>
-    </select>
+      <label for="rating-filter">Rating</label>
+      <select id="rating-filter">
+        <option value="all">Alle</option>
+        <option value="3.5">3.5 ★ en hoger</option>
+        <option value="4">4 ★ en hoger</option>
+        <option value="4.5">4.5 ★ en hoger</option>
+      </select>
 
-    <label for="budget-filter">Budget</label>
-    <select id="budget-filter">
-      <option value="all">Alle</option>
-      <option value="€">€</option>
-      <option value="€€">€€</option>
-      <option value="€€€">€€€</option>
-    </select>
+      <label for="kookduur-filter">Kookduur</label>
+      <select id="kookduur-filter">
+        <option value="all">Alle</option>
+        <option value="30">Max 30 min</option>
+        <option value="45">Max 45 min</option>
+        <option value="60">Max 60 min</option>
+      </select>
 
-    <label for="moeilijkheid-filter">Moeilijkheid</label>
-    <select id="moeilijkheid-filter">
-      <option value="all">Alle</option>
-      <option value="Makkelijk">Makkelijk</option>
-      <option value="Gemiddeld">Gemiddeld</option>
-      <option value="Moeilijk">Moeilijk</option>
-    </select>
-    <button id="pas-filter-toe">filteren</button>
+      <label for="budget-filter">Budget</label>
+      <select id="budget-filter">
+        <option value="all">Alle</option>
+        <option value="€">€</option>
+        <option value="€€">€€</option>
+        <option value="€€€">€€€</option>
+      </select>
+
+      <label for="moeilijkheid-filter">Moeilijkheid</label>
+      <select id="moeilijkheid-filter">
+        <option value="all">Alle</option>
+        <option value="Makkelijk">Makkelijk</option>
+        <option value="Gemiddeld">Gemiddeld</option>
+        <option value="Moeilijk">Moeilijk</option>
+      </select>
+      <button id="pas-filter-toe">Filteren</button>
+    </div>
   </div>
 
   <div id="sortering-container">
