@@ -11,7 +11,7 @@ header {
   align-items: center;
   background-color: #e8d5c4;
   padding: 24px 32px;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   box-sizing: border-box;
   position: fixed;
@@ -19,7 +19,7 @@ header {
   left: 0;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  height: 100px;
+  gap: 16px;
 }
 
 #granny {
@@ -27,23 +27,28 @@ header {
   height: 60px;
   object-fit: cover;
   border-radius: 50%;
-  margin-right: 16px;
 }
 
 #titel {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
   margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 16px;
 }
 
 .controls {
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 10px;
   flex-wrap: nowrap;
+}
+
+#zoek-container {
+  margin: 180px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
 }
 
 #zoek {
@@ -72,7 +77,8 @@ header {
   background-color: #c6a98a;
 }
 
-#taal, .mode-toggle {
+#taal,
+.mode-toggle {
   padding: 8px;
   font-size: 1rem;
   border: 1px solid #c1a78f;
@@ -82,20 +88,59 @@ header {
   transition: background-color 0.3s;
 }
 
-#taal:hover, .mode-toggle:hover {
+#taal:hover,
+.mode-toggle:hover {
   background-color: #e4cdbb;
 }
 
-#maaltijd-container, #dagelijks-maal {
+#maaltijd-container,
+#dagelijks-maal {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
   padding: 40px 32px;
-  margin-top: 180px;
+  margin-top: 40px;
 }
 
 section h2 {
   margin-left: 32px;
+  color: #5c4435;
+  margin-top: 80px;
+}
+
+.maal {
+  background-color: #fff8f3;
+  border: 1px solid #d4bfae;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.3s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.maal:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.maal h3 {
+  margin: 12px 0 8px;
+  color: #3b2e2a;
+  font-size: 1.2rem;
+}
+
+.maal img {
+  border-radius: 8px;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.maal p {
+  margin: 4px 0;
+  font-size: 0.95rem;
   color: #5c4435;
 }
 
@@ -121,52 +166,13 @@ section h2 {
   color: #e9d7c2;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.dark-mode .maal {
+  background-color: #3b2e2a;
+  border-color: #6a5448;
+  color: #f0e9e2;
 }
 
-.zoeksectie {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 140px;
-  margin-bottom: 24px;
-}
-
-@media (max-width: 600px) {
-  .zoeksectie {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #zoek {
-    width: 80%;
-    border-radius: 4px;
-  }
-
-  #zoek-knop {
-    width: 50%;
-    border-radius: 4px;
-    margin-top: 8px;
-  }
-}
-
-#mode-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-#mode-icon {
-  width: 28px;
-  height: 28px;
-  filter: invert(0%);
-  transition: filter 0.3s;
-}
-
-.dark-mode #mode-icon {
-  filter: invert(100%);
+.dark-mode .maal p,
+.dark-mode .maal h3 {
+  color: #f0e9e2;
 }
