@@ -340,6 +340,12 @@ async function laadRegioFilter() {
   });
 }
 
+function toggleFilterPopup() {
+  const popup = document.getElementById("filter-popup");
+  popup.style.display = popup.style.display === "none" || popup.style.display === "" ? "flex" : "none";
+}
+
+
 window.addEventListener("load", () => {
   laadDagMaal();
   laadRandomMaaltijden();
