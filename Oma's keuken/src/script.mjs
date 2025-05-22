@@ -1,3 +1,5 @@
+const API_BASIS = "https://www.themealdb.com/api/json/v1/1/";
+
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
   const icon = document.getElementById("mode-icon");
@@ -19,3 +21,11 @@ function changeLanguage() {
     document.getElementById("zoek").placeholder = "Search for a meal...";
   }
 }
+
+document.getElementById("zoek").addEventListener("input", async (event) => {
+  const zoekterm = event.target.value;
+  if (!zoekterm) return;
+  const antwoord = await fetch(`${API_BASIS}search.php?s=${zoekterm}`);
+  const data = await antwoord.json();
+  toonMaaltijd(data.meals, "maaltijd-container");
+});
