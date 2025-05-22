@@ -13,7 +13,7 @@
       <h1 id="titel">Oma's keuken</h1>
     </div>
     <div class="controls">
-      <button id="mode-toggle" onclick="toggleDarkMode()">
+      <button class="mode-toggle" onclick="toggleDarkMode()">
         <img id="mode-icon" src="pictures/moon.svg" alt="Toggle theme" />
       </button>
       <select id="taal" onchange="changeLanguage()">
@@ -33,11 +33,26 @@
     <div id="dagelijks-maal"></div>
   </section>
 
+  <div class="filters">
+    <select id="categorie-filter">
+      <option value="all">Alle categorieën</option>
+    </select>
+
+    <select id="sortering">
+      <option value="default">Sorteer op</option>
+      <option value="naam-asc">Naam (A-Z)</option>
+      <option value="naam-desc">Naam (Z-A)</option>
+      <option value="tijd-oplopend">Kookduur (kort-lang)</option>
+      <option value="tijd-aflopend">Kookduur (lang-kort)</option>
+      <option value="rating">Rating (hoog-laag)</option>
+    </select>
+  </div>
+
   <section id="resultaten">
     <h2 id="resultaten-titel">Zoekresultaten</h2>
     <div id="maaltijd-container"></div>
   </section>
 
-  <script src="script.mjs"></script>
+  <script src="script.js"></script>
 </body>
 </html>
