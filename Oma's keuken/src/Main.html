@@ -27,26 +27,33 @@
     <input type="text" id="zoek" placeholder="Zoek een maaltijd...">
     <button id="zoek-knop">Zoeken</button>
   </div>
+  
+  <div class="filter-sort-container">
+  <div class="filter-box">
+    <label for="categorie-filter">Filter op categorie:</label>
+    <select id="categorie-filter">
+      <option value="all">Alle categorieën</option>
+    </select>
+  </div>
+
+  <div class="sort-box">
+    <label for="sortering">Sorteer op:</label>
+    <select id="sortering">
+      <option value="default">Sorteer op</option>
+      <option value="naam-asc">Naam A-Z</option>
+      <option value="naam-desc">Naam Z-A</option>
+      <option value="tijd-oplopend">Kookduur (kort → lang)</option>
+      <option value="tijd-aflopend">Kookduur (lang → kort)</option>
+      <option value="rating">Rating (hoog → laag)</option>
+    </select>
+  </div>
+</div>
+
 
   <section id="dagelijkse-aanbeveling">
     <h2 id="dagelijkse-titel">Maaltijd van de dag</h2>
     <div id="dagelijks-maal"></div>
   </section>
-
-  <div class="filters">
-    <select id="categorie-filter">
-      <option value="all">Alle categorieën</option>
-    </select>
-
-    <select id="sortering">
-      <option value="default">Sorteer op</option>
-      <option value="naam-asc">Naam (A-Z)</option>
-      <option value="naam-desc">Naam (Z-A)</option>
-      <option value="tijd-oplopend">Kookduur (kort-lang)</option>
-      <option value="tijd-aflopend">Kookduur (lang-kort)</option>
-      <option value="rating">Rating (hoog-laag)</option>
-    </select>
-  </div>
 
   <section id="resultaten">
     <h2 id="resultaten-titel">Zoekresultaten</h2>
