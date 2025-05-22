@@ -4,7 +4,7 @@ function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
   const pictogram = document.getElementById("mode-icon");
   const isDonker = document.body.classList.contains("dark-mode");
-  pictogram.src = isDonker ? "sun.svg" : "moon.svg";
+  pictogram.src = isDonker ? "pictures/sun.svg" : "pictures/moon.svg";
 }
 
 function changeLanguage() {
@@ -48,10 +48,21 @@ function toonMaaltijd(maaltijden, containerId) {
   });
 }
 
-document.getElementById("zoek").addEventListener("input", async (event) => {
-  const zoekterm = event.target.value;
+document.getElementById("zoek-knop").addEventListener("click", async () => {
+  const zoekterm = document.getElementById("zoek").value.trim();
   if (!zoekterm) return;
   const antwoord = await fetch(`${API_BASIS}search.php?s=${zoekterm}`);
   const data = await antwoord.json();
   toonMaaltijd(data.meals, "maaltijd-container");
 });
+
+async function laadDagMaal() {
+  const antwoord = await fetch(`${API_BASIS}random.php`);
+  const data = await antwoord.json();
+  toonMaaltijd(data.meals, "dagelijks-maal");
+}
+laadDagMaal();
+
+function showDetails(maaltijdId) {
+  alert("Detailpagina voor maaltijd ID: " + maaltijdId);
+}
