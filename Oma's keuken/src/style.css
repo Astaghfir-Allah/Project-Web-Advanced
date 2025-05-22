@@ -18,7 +18,13 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  gap: 16px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
   gap: 16px;
 }
 
@@ -33,6 +39,7 @@ header {
   font-size: 2rem;
   font-weight: bold;
   margin: 0;
+  color: #3b2e2a;
 }
 
 .controls {
@@ -43,7 +50,7 @@ header {
   flex-wrap: nowrap;
 }
 
-#zoek-container {
+.zoeksectie {
   margin: 180px auto 0;
   display: flex;
   justify-content: center;
@@ -59,6 +66,7 @@ header {
   border-radius: 4px 0 0 4px;
   background-color: #fff8f3;
   outline: none;
+  color: #3b2e2a;
 }
 
 #zoek-knop {
@@ -77,6 +85,12 @@ header {
   background-color: #c6a98a;
 }
 
+#mode-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
 #taal,
 .mode-toggle {
   padding: 8px;
@@ -84,6 +98,7 @@ header {
   border: 1px solid #c1a78f;
   border-radius: 4px;
   background-color: #fff8f3;
+  color: #3b2e2a;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -117,6 +132,8 @@ section h2 {
   transition: transform 0.2s, box-shadow 0.3s;
   cursor: pointer;
   text-align: center;
+  max-width: 250px;
+  margin: 0 auto;
 }
 
 .maal:hover {
@@ -144,6 +161,12 @@ section h2 {
   color: #5c4435;
 }
 
+.aanbevolen-maal {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .dark-mode {
   background-color: #2a211c;
   color: #f0e9e2;
@@ -151,6 +174,10 @@ section h2 {
 
 .dark-mode header {
   background-color: #3b2e2a;
+}
+
+.dark-mode #titel {
+  color: #f0e9e2;
 }
 
 .dark-mode #zoek,
